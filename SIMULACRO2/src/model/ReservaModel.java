@@ -26,7 +26,7 @@ public class ReservaModel implements CRUD {
 
             ResultSet objResult = objPrepare.getGeneratedKeys();
 
-            while (objResult != null){
+            while (objResult.next()){
                 objReserva.setId_reserva(objResult.getInt(1));
             }
 

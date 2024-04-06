@@ -11,9 +11,9 @@ public class ConfigDb {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            String sql = "jdbc://bi82fbwai2upwwb9zqqc-mysql.services.clever-cloud.com:3306/bi82fbwai2upwwb9zqqc";
-            String user = "uvlp1pwzdicqkmyd";
-            String password = "TfgAnSv7fk1syLypOzJ1";
+            String sql = "jdbc:mysql://localhost:3306/simulacro2";
+            String user = "root";
+            String password = "MySQLDataBase*77";
 
             objConnection = DriverManager.getConnection(sql,user,password);
 

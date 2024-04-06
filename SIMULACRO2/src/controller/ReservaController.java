@@ -1,16 +1,8 @@
 package controller;
 
 import Utils.Utils;
-import entity.Pasajero;
-import entity.Reserva;
-import entity.Vuelo;
-import model.AvionModel;
-import model.PasajeroModel;
-import model.ReservaModel;
-import model.VueloModel;
-
+import entity.*;
 import javax.swing.*;
-
 import static Utils.Utils.*;
 
 public class ReservaController {
@@ -50,6 +42,7 @@ public class ReservaController {
                 objReserva.setVuelo(vuelo);
 
                 instanceOfModelReserva().insert(objReserva);
+                JOptionPane.showMessageDialog(null,objReserva.toString());
             } else {
                 JOptionPane.showMessageDialog(null,"El asiento ya ha sido asignado intenta de nuevo");
             }
@@ -87,7 +80,7 @@ public class ReservaController {
                 Reservas,
                 Reservas[0]);
 
-        isDeleted = JOptionPane.showConfirmDialog(null,"Are you sure of the delete?");
+        isDeleted = JOptionPane.showConfirmDialog(null,"Are you sure of the delete?\n" + objReserva.toString());
         if (isDeleted == 0){
             instanceOfModelReserva().delete(objReserva);
         }

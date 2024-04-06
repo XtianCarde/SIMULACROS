@@ -14,9 +14,9 @@ public class ConfigDb {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver")   ;
 
-            String url = "jdbc:mysql://bvnnep6hyaia1mgwdlcy-mysql.services.clever-cloud.com:3306/bvnnep6hyaia1mgwdlcy";
-            String user = "uth1mnhjcemxhsrs";
-            String password = "IUenjfAGV6VlSdaSAaMx";
+            String url = "jdbc:mysql://localhost:3306/simulacro1";
+            String user = "root";
+            String password = "MySQLDataBase*77";
 
             objConnection = (Connection) DriverManager.getConnection(url,user,password);
         } catch (ClassNotFoundException error){

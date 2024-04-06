@@ -21,7 +21,7 @@ public class AvionModel implements CRUD {
             objPrepare.execute();
             ResultSet objResult = objPrepare.getGeneratedKeys();
 
-            while (objResult != null){
+            while (objResult.next()){
                 objAvion.setId_avion(objResult.getInt(1));
             }
 

@@ -25,7 +25,7 @@ public class VueloModel implements CRUD {
 
             ResultSet objResult = objPrepare.getGeneratedKeys();
 
-            while (objResult != null){
+            while (objResult.next()){
                 objVuelo.setId_vuelo(objResult.getInt(1));
             }
 

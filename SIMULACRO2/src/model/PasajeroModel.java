@@ -23,7 +23,7 @@ public class PasajeroModel implements CRUD {
 
             ResultSet objResult = objPrepare.getGeneratedKeys();
 
-            while (objResult != null){
+            while (objResult.next()){
                 objPasajero.setId_pasajero(objResult.getInt(1));
             }
 

@@ -29,7 +29,7 @@ public class VueloController {
         objVuelo.setFk_id_avion(fk_id_avion);
         objVuelo.setAvion(objAvion);
 
-        instanceOfModelAvion().insert(objVuelo);
+        instanceOfModelVuelo().insert(objVuelo);
         JOptionPane.showMessageDialog(null,objVuelo.toString());
     }
 

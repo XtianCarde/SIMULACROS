@@ -32,17 +32,21 @@ public class ReservaController {
 
             String fecha_reserva = JOptionPane.showInputDialog("Ingresa fecha de resesrva en este formato YYYY-MM-DD");
             String asiento = JOptionPane.showInputDialog("Ingresa el asiento a asignar");
-            if (!instanceOfModelReserva().findByAsiento(asiento) && instanceOfModelReserva().findAll().size() < instanceOfModelAvion().findById(vuelo.getFk_id_avion()).getCapacidad()){
-                Reserva objReserva = new Reserva();
-                objReserva.setFk_id_pasajero(pasajero.getId_pasajero());
-                objReserva.setFk_id_vuelo(vuelo.getId_vuelo());
-                objReserva.setFecha_reserva(fecha_reserva);
-                objReserva.setAsiento(asiento);
-                objReserva.setPasajero(pasajero);
-                objReserva.setVuelo(vuelo);
+            if (!instanceOfModelReserva().findByAsiento(asiento)){
+                if (instanceOfModelReserva().findAll().size() < instanceOfModelAvion().findById(vuelo.getFk_id_avion()).getCapacidad()){
+                    Reserva objReserva = new Reserva();
+                    objReserva.setFk_id_pasajero(pasajero.getId_pasajero());
+                    objReserva.setFk_id_vuelo(vuelo.getId_vuelo());
+                    objReserva.setFecha_reserva(fecha_reserva);
+                    objReserva.setAsiento(asiento);
+                    objReserva.setPasajero(pasajero);
+                    objReserva.setVuelo(vuelo);
 
-                instanceOfModelReserva().insert(objReserva);
-                JOptionPane.showMessageDialog(null,objReserva.toString());
+                    instanceOfModelReserva().insert(objReserva);
+                    JOptionPane.showMessageDialog(null,objReserva.toString());
+                } else {
+                    JOptionPane.showMessageDialog(null,"Ya no hay reservas disponibles para este vuelo, Gracias por tu comprensión!");
+                }
             } else {
                 JOptionPane.showMessageDialog(null,"El asiento ya ha sido asignado intenta de nuevo");
             }

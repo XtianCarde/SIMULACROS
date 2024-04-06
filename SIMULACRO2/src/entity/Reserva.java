@@ -83,7 +83,7 @@ public class Reserva {
         return "Reserva: " +
                 "fecha_reserva='" + fecha_reserva + '\'' +
                 ", asiento='" + asiento + '\'' + "\n" +
-                ", " + pasajero.getNombre() + "\n" +
-                ", " + vuelo.toString();
+                " " + pasajero.getNombre() + "\n" +
+                " " + vuelo.toString();
     }
 }

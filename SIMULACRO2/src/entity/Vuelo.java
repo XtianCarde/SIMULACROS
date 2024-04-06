@@ -75,6 +75,6 @@ public class Vuelo {
                 ", destino='" + destino + '\'' +
                 ", fecha_salida='" + fecha_salida + '\'' +
                 ", hora_salida='" + hora_salida + '\'' + "\n" +
-                ", " + avion.toString();
+                " " + avion.toString();
     }
 }

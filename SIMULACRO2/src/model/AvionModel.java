@@ -124,6 +124,7 @@ public class AvionModel implements CRUD {
             String sql = "SELECT * FROM avion WHERE id_avion = ?;";
             PreparedStatement objPrepare = objConnection.prepareStatement(sql);
 
+            objPrepare.setInt(1,id);
             ResultSet objResult = objPrepare.executeQuery();
 
             while (objResult.next()){

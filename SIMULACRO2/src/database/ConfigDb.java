@@ -15,7 +15,7 @@ public class ConfigDb {
             String user = "uvlp1pwzdicqkmyd";
             String password = "TfgAnSv7fk1syLypOzJ1";
 
-            objConnection = (Connection) DriverManager.getConnection(sql,user,password);
+            objConnection = DriverManager.getConnection(sql,user,password);
 
         } catch (ClassNotFoundException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());

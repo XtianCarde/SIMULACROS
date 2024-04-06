@@ -1,16 +1,10 @@
 package model;
 
-import database.CRUD;
-import database.ConfigDb;
-import entity.Avion;
-
+import database.*;
+import entity.*;
 import javax.swing.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.*;
+import java.util.*;
 
 public class AvionModel implements CRUD {
     @Override
@@ -121,5 +115,27 @@ public class AvionModel implements CRUD {
             ConfigDb.closeConnection();
         }
         return idUpdate;
+    }
+
+    public Avion findById(int id){
+        Connection objConnection = ConfigDb.openConnection();
+        Avion objAvion = null;
+        try {
+            String sql = "SELECT * FROM avion WHERE id_avion = ?;";
+            PreparedStatement objPrepare = objConnection.prepareStatement(sql);
+
+            ResultSet objResult = objPrepare.executeQuery();
+
+            while (objResult.next()){
+                objAvion = new Avion(objResult.getInt("id_avion"),
+                        objResult.getString("modelo"),
+                        objResult.getInt("capacidad"));
+            }
+        } catch (SQLException e){
+            JOptionPane.showMessageDialog(null,e.getMessage());
+        } finally {
+            ConfigDb.closeConnection();
+        }
+        return objAvion;
     }
 }

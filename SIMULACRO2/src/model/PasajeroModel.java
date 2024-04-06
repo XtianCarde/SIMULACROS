@@ -1,17 +1,10 @@
 package model;
 
-import database.CRUD;
-import database.ConfigDb;
-import entity.Pasajero;
-
+import database.*;
+import entity.*;
 import javax.swing.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
+import java.sql.*;
+import java.util.*;
 public class PasajeroModel implements CRUD {
     @Override
     public Object insert(Object obj) {
